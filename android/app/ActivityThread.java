@@ -5343,6 +5343,7 @@ public final class ActivityThread {
         try {
             // If the app is being launched for full backup or restore, bring it up in
             // a restricted environment with the base application class.
+            Log.v("yihao", "makeApplication");
             Application app = data.info.makeApplication(data.restrictedBackupMode, null);
             mInitialApplication = app;
 
@@ -5369,6 +5370,7 @@ public final class ActivityThread {
             }
 
             try {
+                Log.v("yihao", "callApplicationOnCreate");
                 mInstrumentation.callApplicationOnCreate(app);
             } catch (Exception e) {
                 if (!mInstrumentation.onException(app, e)) {
@@ -5434,6 +5436,8 @@ public final class ActivityThread {
             return provider;
         }
 
+        Log.v("yihao","acquireProvider");
+        Log.v("yihao",Log.getStackTraceString(new Throwable()));
         // There is a possible race here.  Another thread may try to acquire
         // the same provider at the same time.  When this happens, we want to ensure
         // that the first one wins.

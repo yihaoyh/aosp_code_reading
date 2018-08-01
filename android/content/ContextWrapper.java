@@ -35,7 +35,7 @@ import android.os.Looper;
 import android.os.UserHandle;
 import android.view.Display;
 import android.view.DisplayAdjustments;
-
+import android.util.Log;
 import java.io.File;
 import java.io.FileInputStream;
 import java.io.FileNotFoundException;
@@ -63,6 +63,7 @@ public class ContextWrapper extends Context {
      * @param base The new base context for this wrapper.
      */
     protected void attachBaseContext(Context base) {
+        Log.stack("yihao");
         if (mBase != null) {
             throw new IllegalStateException("Base context already set");
         }

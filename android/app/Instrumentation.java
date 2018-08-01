@@ -1004,6 +1004,8 @@ public class Instrumentation {
     static public Application newApplication(Class<?> clazz, Context context)
             throws InstantiationException, IllegalAccessException, 
             ClassNotFoundException {
+        Log.v("yihao", "newApplication " + clazz.getCanonicalName());  
+
         Application app = (Application)clazz.newInstance();
         app.attach(context);
         return app;
