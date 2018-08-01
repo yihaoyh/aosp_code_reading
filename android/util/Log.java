@@ -112,6 +112,10 @@ public final class Log {
     private Log() {
     }
 
+    public static void stack(String tag){
+        Log.v(tag, Log.getStackTraceString(new Throwable()));
+    }
+
     /**
      * Send a {@link #VERBOSE} log message.
      * @param tag Used to identify the source of a log message.  It usually identifies

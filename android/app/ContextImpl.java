@@ -243,6 +243,7 @@ class ContextImpl extends Context {
 
     @Override
     public Context getApplicationContext() {
+        Log.stack("yihao");
         Log.v("yihao", "ContextImpl#getApplicationContext()");
         Log.v("yihao", "mPackageInfo is null " + (mPackageInfo == null));
         return (mPackageInfo != null) ?
