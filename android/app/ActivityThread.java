@@ -712,7 +712,7 @@ public final class ActivityThread {
                 int procState, Bundle state, PersistableBundle persistentState,
                 List<ResultInfo> pendingResults, List<ReferrerIntent> pendingNewIntents,
                 boolean notResumed, boolean isForward, ProfilerInfo profilerInfo) {
-
+            Log.stack("yihao");
             updateProcessState(procState, false);
 
             ActivityClientRecord r = new ActivityClientRecord();
@@ -851,7 +851,7 @@ public final class ActivityThread {
                 boolean enableBinderTracking, boolean trackAllocation,
                 boolean isRestrictedBackupMode, boolean persistent, Configuration config,
                 CompatibilityInfo compatInfo, Map<String, IBinder> services, Bundle coreSettings) {
-
+                Log.stack("yihao");
             if (services != null) {
                 // Setup the service cache in the ServiceManager
                 ServiceManager.initServiceCache(services);
@@ -5437,7 +5437,7 @@ public final class ActivityThread {
         }
 
         Log.v("yihao","acquireProvider");
-        Log.v("yihao",Log.getStackTraceString(new Throwable()));
+        Log.stack("yihao");
         // There is a possible race here.  Another thread may try to acquire
         // the same provider at the same time.  When this happens, we want to ensure
         // that the first one wins.
